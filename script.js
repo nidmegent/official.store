@@ -4,7 +4,7 @@
 ===================================================== */
 
 // Apps ScriptのウェブアプリURLに置き換える。
-const API_URL = "YOUR_APPS_SCRIPT_WEB_APP_URL";
+const API_URL = "https://script.google.com/macros/s/AKfycbxLbum9_DGNNOO-iVPqZ5jZWOf8avBcWLuG37DqGPr7U6CmtGnhFCU-bEMvoDpHxHkThg/exec";
 
 const state = {
   products: [],
