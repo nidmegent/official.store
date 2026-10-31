@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <title>STORE ADMIN | NIDMEGENT</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .admin-page {
+      min-height: 100vh;
+      background: #0a0a0a;
+    }
+
+    .admin-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 5%;
+      border-bottom: 1px solid var(--line);
+      background: #111;
+    }
+
+    .admin-header h1 {
+      margin: 0;
+      font: 800 25px var(--font-display);
+      letter-spacing: 1px;
+    }
+
+    .admin-header h1 span {
+      color: var(--red);
+    }
+
+    .admin-header a {
+      color: #aaa;
+      font-size: 12px;
+    }
+
+    .admin-main {
+      width: min(1050px, 92%);
+      margin: 0 auto;
+      padding: 50px 0 100px;
+    }
+
+    .admin-heading {
+      margin-bottom: 35px;
+    }
+
+    .admin-heading h2 {
+      margin: 0;
+      font: 900 clamp(38px, 6vw, 58px)/1 var(--font-display);
+    }
+
+    .admin-heading p {
+      color: #999;
+      font-size: 13px;
+    }
+
+    .admin-panel {
+      margin-bottom: 30px;
+      padding: 28px;
+      background: #111;
+      border: 1px solid #292929;
+    }
+
+    .admin-panel h3 {
+      margin: 0 0 25px;
+      font: 800 24px var(--font-display);
+      letter-spacing: 1px;
+    }
+
+    .admin-panel h3 span {
+      color: var(--red);
+    }
+
+    .admin-form {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .admin-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .admin-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .admin-field label {
+      color: #c7c7c7;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .admin-field input,
+    .admin-field select,
+    .admin-field textarea {
+      width: 100%;
+      min-height: 46px;
+      padding: 12px;
+      color: #fff;
+      background: #090909;
+      border: 1px solid #333;
+      border-radius: 0;
+    }
+
+    .admin-field textarea {
+      min-height: 115px;
+      resize: vertical;
+    }
+
+    .admin-field input:focus,
+    .admin-field select:focus,
+    .admin-field textarea:focus {
+      border-color: var(--red);
+      outline: none;
+    }
+
+    .admin-checks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      grid-column: 1 / -1;
+    }
+
+    .admin-checks label {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: #ddd;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .admin-checks input {
+      accent-color: var(--red);
+      width: 17px;
+      height: 17px;
+    }
+
+    .admin-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      grid-column: 1 / -1;
+    }
+
+    .admin-button {
+      min-height: 45px;
+      padding: 11px 20px;
+      border: 1px solid #444;
+      background: #1b1b1b;
+      color: #fff;
+      cursor: pointer;
+      font: 700 13px var(--font-display);
+      letter-spacing: 1px;
+      transition: .2s;
+    }
+
+    .admin-button:hover {
+      border-color: var(--red);
+    }
+
+    .admin-button.primary {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .admin-button.danger {
+      color: #ff7b89;
+    }
+
+    .admin-button:disabled {
+      opacity: .5;
+      cursor: wait;
+    }
+
+    .admin-status {
+      display: none;
+      margin: 18px 0 0;
+      padding: 12px;
+      background: #191919;
+      border-left: 3px solid var(--red);
+      color: #ddd;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .admin-status.show {
+      display: block;
+    }
+
+    .admin-login {
+      max-width: 460px;
+      margin: 65px auto;
+    }
+
+    .admin-product-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .admin-product {
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      padding: 14px;
+      border: 1px solid #292929;
+      background: #0d0d0d;
+    }
+
+    .admin-product img,
+    .admin-product-placeholder {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      background: #222;
+    }
+
+    .admin-product-placeholder {
+      display: grid;
+      place-items: center;
+      color: #777;
+      font: 900 28px var(--font-display);
+    }
+
+    .admin-product h4 {
+      margin: 0 0 5px;
+      overflow-wrap: anywhere;
+    }
+
+    .admin-product p {
+      margin: 0;
+      color: #999;
+      font-size: 12px;
+    }
+
+    .admin-product-status {
+      display: inline-block;
+      margin-top: 7px;
+      color: #aaa;
+      font-size: 11px;
+    }
+
+    .admin-product-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .admin-product-actions button {
+      padding: 7px 10px;
+      font-size: 12px;
+    }
+
+    .admin-preview {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 12px;
+      background: #090909;
+      border: 1px solid #292929;
+    }
+
+    .admin-preview img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      background: #222;
+    }
+
+    .admin-preview p {
+      color: #999;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .admin-hidden {
+      display: none !important;
+    }
+
+    .admin-security-note {
+      margin-top: 25px;
+      color: #888;
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    @media (max-width: 600px) {
+      .admin-main {
+        padding-top: 30px;
+      }
+
+      .admin-panel {
+        padding: 18px;
+      }
+
+      .admin-form {
+        grid-template-columns: 1fr;
+      }
+
+      .admin-field.full {
+        grid-column: auto;
+      }
+
+      .admin-product {
+        grid-template-columns: 65px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .admin-product img,
+      .admin-product-placeholder {
+        width: 65px;
+        height: 65px;
+      }
+
+      .admin-product-actions {
+        grid-column: 1 / -1;
+        flex-direction: row;
+      }
+
+      .admin-product-actions button {
+        flex: 1;
+      }
+    }
+  </style>
+
+  <script src="admin.js" defer></script>
+</head>
+
+<body class="admin-page">
+
+  <header class="admin-header">
+    <h1>NIDMEGENT <span>ADMIN</span></h1>
+    <a href="index.html">← BACK TO STORE</a>
+  </header>
+
+  <main class="admin-main">
+
+    <!-- LOGIN -->
+    <section id="loginSection" class="admin-login admin-panel">
+      <div class="admin-heading">
+        <p class="section-kicker">RESTRICTED ACCESS</p>
+        <h2>ADMIN LOGIN<span>.</span></h2>
+        <p>管理者IDとパスワードを入力してください。</p>
+      </div>
+
+      <form id="loginForm" class="admin-form">
+        <div class="admin-field full">
+          <label for="adminId">ADMIN ID</label>
+          <input id="adminId" name="adminId"
+            autocomplete="username" required maxlength="100">
+        </div>
+
+        <div class="admin-field full">
+          <label for="adminPassword">PASSWORD</label>
+          <input id="adminPassword" name="adminPassword"
+            type="password" autocomplete="current-password"
+            required maxlength="200">
+        </div>
+
+        <div class="admin-actions">
+          <button class="admin-button primary" type="submit">
+            LOGIN ↗
+          </button>
+        </div>
+      </form>
+
+      <p class="admin-status" id="loginStatus" role="status"></p>
+
+      <p class="admin-security-note">
+        管理者認証はサーバー側で実行されます。
+        管理者パスワードをGitHubのコードに記載しないでください。
+      </p>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboardSection" class="admin-hidden">
+
+      <div class="admin-heading">
+        <p class="section-kicker">STORE MANAGEMENT</p>
+        <h2>PRODUCTS<span>.</span></h2>
+        <p>商品情報を管理します。</p>
+      </div>
+
+      <section class="admin-panel">
+        <h3 id="formHeading">＋ NEW PRODUCT</h3>
+
+        <form id="productForm" class="admin-form">
+
+          <input type="hidden" id="productId">
+
+          <div class="admin-field full">
+            <label for="productName">商品名 *</label>
+            <input id="productName" required maxlength="120">
+          </div>
+
+          <div class="admin-field">
+            <label for="productPrice">価格（円） *</label>
+            <input id="productPrice" type="number"
+              min="0" max="100000000" step="1" required>
+          </div>
+
+          <div class="admin-field">
+            <label for="productCategory">カテゴリー *</label>
+            <select id="productCategory" required>
+              <option value="APPAREL">APPAREL</option>
+              <option value="ACCESSORIES">ACCESSORIES</option>
+              <option value="OTHER">OTHER</option>
+            </select>
+          </div>
+
+          <div class="admin-field">
+            <label for="productPlatform">販売先 *</label>
+            <select id="productPlatform" required>
+              <option value="BOOTH">BOOTH</option>
+              <option value="SUZURI">SUZURI</option>
+            </select>
+          </div>
+
+          <div class="admin-field">
+            <label for="productUrl">販売ページURL *</label>
+            <input id="productUrl" type="url"
+              placeholder="https://booth.pm/..." required>
+          </div>
+
+          <div class="admin-field full">
+            <label for="productImage">商品画像URL（HTTPS）</label>
+            <input id="productImage" type="url"
+              placeholder="https://example.com/image.jpg">
+          </div>
+
+          <div class="admin-field full">
+            <div class="admin-preview">
+              <img id="imagePreview" alt="商品画像プレビュー"
+                src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=">
+              <p id="previewText">画像URLを入力するとプレビューを表示します。</p>
+            </div>
+          </div>
+
+          <div class="admin-field full">
+            <label for="productDescription">商品説明</label>
+            <textarea id="productDescription"
+              maxlength="3000"
+              placeholder="商品の特徴・サイズなど"></textarea>
+          </div>
+
+          <div class="admin-checks">
+            <label>
+              <input id="productIsNew" type="checkbox">
+              NEWバッジを表示
+            </label>
+
+            <label>
+              <input id="productIsFeatured" type="checkbox">
+              PICK UPに掲載
+            </label>
+
+            <label>
+              <input id="productIsPublished" type="checkbox" checked>
+              商品を公開する
+            </label>
+          </div>
+
+          <div class="admin-actions">
+            <button type="submit"
+              class="admin-button primary" id="saveButton">
+              SAVE PRODUCT
+            </button>
+
+            <button type="button"
+              class="admin-button" id="resetFormButton">
+              CLEAR FORM
+            </button>
+          </div>
+
+        </form>
+
+        <p class="admin-status" id="formStatus" role="status"></p>
+      </section>
+
+      <section class="admin-panel">
+        <h3>REGISTERED <span>ITEMS</span></h3>
+
+        <div class="admin-actions" style="margin-bottom:20px">
+          <button type="button" class="admin-button"
+            id="refreshButton">
+            ↻ REFRESH
+          </button>
+
+          <button type="button" class="admin-button"
+            id="logoutButton">
+            LOGOUT
+          </button>
+        </div>
+
+        <div class="admin-product-list" id="adminProductList">
+          <p>商品データを読み込み中...</p>
+        </div>
+
+        <p class="admin-status" id="listStatus" role="status"></p>
+      </section>
+
+    </section>
+
+  </main>
+
+  <!-- POST API response target -->
+  <iframe name="apiFrame" id="apiFrame"
+    title="API response" hidden></iframe>
+
+</body>
+</html>
