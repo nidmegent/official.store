@@ -1,102 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="theme-color" content="#0a0a0a">
-  <meta name="description" content="Nidmegent Esports Official Store. Official merchandise, apparel and accessories.">
-
-  <title>NIDMEGENT OFFICIAL STORE</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0a0a"><meta name="description" content="Nidmegent Esports Official Store. Official merchandise, apparel and accessories.">
+<title>NIDMEGENT OFFICIAL STORE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
-
 <body>
+<div class="announcement"><span>OFFICIAL MERCHANDISE</span><span class="announcement-dot"></span><span>NIDMEGENT ESPORTS</span></div>
+<header class="site-header">
+<a href="index.html" class="brand"><img src="logo.png" alt="Nidmegent Esports" class="brand-logo"><span class="brand-text"><strong>NIDMEGENT</strong><small>OFFICIAL STORE</small></span></a>
+<button class="menu-toggle" id="menuToggle" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span></button>
+<nav class="main-nav" id="mainNav"><a href="#home">HOME</a><a href="#featured">FEATURED</a><a href="#products">PRODUCTS</a><a href="#about">ABOUT</a></nav>
+<a href="#products" class="header-cta">SHOP NOW <span>↗</span></a>
+</header>
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="hero-grid"></div><div class="hero-glow"></div>
+<div class="hero-content"><div class="eyebrow"><span class="red-line"></span>NIDMEGENT ESPORTS / OFFICIAL STORE</div>
+<h1>NEVER GIVE UP<span class="red-period">.</span><br><span class="hero-outline">NEVER BACK DOWN.</span></h1>
+<p class="hero-description">何度でも挑戦する。<br>Nidmegentの世界観を、あなたの日常へ。</p>
+<a href="#products" class="primary-button">EXPLORE COLLECTION<span class="button-arrow">↘</span></a>
+<div class="hero-caption"><span>OFFICIAL MERCHANDISE</span><span>EST. NIDMEGENT ESPORTS</span></div></div>
+<div class="hero-side-label">NEVER STOP CHALLENGING</div>
+<div class="hero-number"><span>01</span><span class="number-line"></span><span>04</span></div>
+</section>
 
-  <div class="announcement">
-    <span>OFFICIAL MERCHANDISE</span>
-    <span class="announcement-dot"></span>
-    <span>NIDMEGENT ESPORTS</span>
-  </div>
-
-  <header class="site-header">
-    <a href="index.html" class="brand">
-      <img src="logo.png" alt="Nidmegent Esports" class="brand-logo">
-      <span class="brand-text">
-        <strong>NIDMEGENT</strong>
-        <small>OFFICIAL STORE</small>
-      </span>
-    </a>
-
-    <button class="menu-toggle" id="menuToggle"
-      aria-label="メニューを開く" aria-expanded="false">
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav class="main-nav" id="mainNav">
-      <a href="#home">HOME</a>
-      <a href="#featured">FEATURED</a>
-      <a href="#products">PRODUCTS</a>
-      <a href="#about">ABOUT</a>
-    </nav>
-
-    <a href="#products" class="header-cta">
-      SHOP NOW <span>↗</span>
-    </a>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="hero-grid"></div>
-      <div class="hero-glow"></div>
-
-      <div class="hero-content">
-        <div class="eyebrow">
-          <span class="red-line"></span>
-          NIDMEGENT ESPORTS / OFFICIAL STORE
-        </div>
-
-        <h1>
-          NEVER GIVE UP<span class="red-period">.</span><br>
-          <span class="hero-outline">NEVER BACK DOWN.</span>
-        </h1>
-
-        <p class="hero-description">
-          何度でも挑戦する。<br>
-          Nidmegentの世界観を、あなたの日常へ。
-        </p>
-
-        <a href="#products" class="primary-button">
-          EXPLORE COLLECTION
-          <span class="button-arrow">↘</span>
-        </a>
-
-        <div class="hero-caption">
-          <span>OFFICIAL MERCHANDISE</span>
-          <span>EST. NIDMEGENT ESPORTS</span>
-        </div>
-      </div>
-
-      <div class="hero-side-label">NEVER STOP CHALLENGING</div>
-
-      <div class="hero-number">
-        <span>01</span>
-        <span class="number-line"></span>
-        <span>04</span>
-      </div>
-    </section>
-
-    <!-- BRAND MESSAGE -->
+<!-- BRAND MESSAGE -->
     <section class="ticker" aria-label="ブランドメッセージ">
       <div class="ticker-track">
         <span>NEVER GIVE UP</span><b>✳</b>
@@ -238,53 +175,18 @@
       </div>
     </section>
 
-  </main>
+</main>
+<footer class="site-footer"><a href="#home" class="footer-brand"><img src="logo.png" alt="" class="footer-logo"><span>NIDMEGENT</span></a><p class="footer-tagline">NEVER GIVE UP. NEVER BACK DOWN.</p>
+<div class="footer-bottom"><span>© <span id="currentYear"></span> NIDMEGENT ESPORTS</span><a href="#home">BACK TO TOP ↑</a></div>
+</footer>
+<!-- PRODUCT DETAIL MODAL -->
+<dialog class="product-modal" id="productModal">
+<button class="modal-close" id="modalClose" aria-label="閉じる">×</button>
+<div class="modal-layout"><div class="modal-image-wrap"><img src="" alt="" id="modalImage"></div>
+<div class="modal-content"><p class="section-kicker" id="modalCategory">CATEGORY</p><h2 id="modalName">PRODUCT NAME</h2><p class="modal-price" id="modalPrice"></p><p class="modal-description" id="modalDescription"></p>
+<a href="#" id="modalPurchase" class="primary-button" target="_blank" rel="noopener noreferrer">BUY AT STORE <span class="button-arrow">↗</span></a>
+<p class="modal-note">※購入手続きは外部販売サイトで行われます。</p></div></div></dialog>
 
-  <footer class="site-footer">
-    <a href="#home" class="footer-brand">
-      <img src="logo.png" alt="" class="footer-logo">
-      <span>NIDMEGENT</span>
-    </a>
-
-    <p class="footer-tagline">
-      NEVER GIVE UP. NEVER BACK DOWN.
-    </p>
-
-    <div class="footer-bottom">
-      <span>© <span id="currentYear"></span> NIDMEGENT ESPORTS</span>
-      <a href="#home">BACK TO TOP ↑</a>
-    </div>
-  </footer>
-
-  <!-- PRODUCT DETAIL MODAL -->
-  <dialog class="product-modal" id="productModal">
-    <button class="modal-close" id="modalClose"
-      aria-label="閉じる">×</button>
-
-    <div class="modal-layout">
-      <div class="modal-image-wrap">
-        <img src="" alt="" id="modalImage">
-      </div>
-
-      <div class="modal-content">
-        <p class="section-kicker" id="modalCategory">CATEGORY</p>
-        <h2 id="modalName">PRODUCT NAME</h2>
-        <p class="modal-price" id="modalPrice"></p>
-        <p class="modal-description" id="modalDescription"></p>
-
-        <a href="#" id="modalPurchase" class="primary-button"
-          target="_blank" rel="noopener noreferrer">
-          BUY AT STORE <span class="button-arrow">↗</span>
-        </a>
-
-        <p class="modal-note">
-          ※購入手続きは外部販売サイトで行われます。
-        </p>
-      </div>
-    </div>
-  </dialog>
-
-  <div class="toast" id="toast" role="status"></div>
-
+<div class="toast" id="toast" role="status"></div>
 </body>
 </html>
