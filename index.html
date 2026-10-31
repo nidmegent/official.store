@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Nidmegent Esports Official Store. Official merchandise, apparel and accessories.">
+
+  <title>NIDMEGENT OFFICIAL STORE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <div class="announcement">
+    <span>OFFICIAL MERCHANDISE</span>
+    <span class="announcement-dot"></span>
+    <span>NIDMEGENT ESPORTS</span>
+  </div>
+
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <img src="images/logo.png" alt="Nidmegent Esports" class="brand-logo">
+      <span class="brand-text">
+        <strong>NIDMEGENT</strong>
+        <small>OFFICIAL STORE</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="メニューを開く" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#home">HOME</a>
+      <a href="#featured">FEATURED</a>
+      <a href="#products">PRODUCTS</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+
+    <a href="#products" class="header-cta">
+      SHOP NOW <span>↗</span>
+    </a>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+
+      <div class="hero-content">
+        <div class="eyebrow">
+          <span class="red-line"></span>
+          NIDMEGENT ESPORTS / OFFICIAL STORE
+        </div>
+
+        <h1>
+          NEVER GIVE UP<span class="red-period">.</span><br>
+          <span class="hero-outline">NEVER BACK DOWN.</span>
+        </h1>
+
+        <p class="hero-description">
+          何度でも挑戦する。<br>
+          Nidmegentの世界観を、あなたの日常へ。
+        </p>
+
+        <a href="#products" class="primary-button">
+          EXPLORE COLLECTION
+          <span class="button-arrow">↘</span>
+        </a>
+
+        <div class="hero-caption">
+          <span>OFFICIAL MERCHANDISE</span>
+          <span>EST. NIDMEGENT ESPORTS</span>
+        </div>
+      </div>
+
+      <div class="hero-side-label">NEVER STOP CHALLENGING</div>
+
+      <div class="hero-number">
+        <span>01</span>
+        <span class="number-line"></span>
+        <span>04</span>
+      </div>
+    </section>
+
+    <!-- BRAND MESSAGE -->
+    <section class="ticker" aria-label="ブランドメッセージ">
+      <div class="ticker-track">
+        <span>NEVER GIVE UP</span><b>✳</b>
+        <span>NIDMEGENT ESPORTS</span><b>✳</b>
+        <span>NEVER BACK DOWN</span><b>✳</b>
+        <span>NEVER GIVE UP</span><b>✳</b>
+        <span>NIDMEGENT ESPORTS</span><b>✳</b>
+        <span>NEVER BACK DOWN</span><b>✳</b>
+      </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="section featured-section" id="featured">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">HANDPICKED FOR YOU</p>
+          <h2>FEATURED<span>.</span></h2>
+          <p class="section-description">
+            Nidmegentがおすすめするアイテム。
+          </p>
+        </div>
+
+        <a href="#products" class="text-link">
+          VIEW ALL PRODUCTS <span>↗</span>
+        </a>
+      </div>
+
+      <div class="featured-grid" id="featuredGrid">
+        <div class="loading-card">
+          <span class="loader"></span>
+          <p>LOADING COLLECTION...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY -->
+    <section class="category-section">
+      <div class="category-intro">
+        <p class="section-kicker">FIND YOUR STYLE</p>
+        <h2>CHOOSE<br>YOUR <span>GEAR.</span></h2>
+      </div>
+
+      <button class="category-tile category-apparel"
+        data-category="APPAREL">
+        <span class="category-index">01 / CATEGORY</span>
+        <span class="category-title">APPAREL</span>
+        <span class="category-subtitle">WEAR THE BRAND</span>
+        <span class="category-arrow">↗</span>
+      </button>
+
+      <button class="category-tile category-accessories"
+        data-category="ACCESSORIES">
+        <span class="category-index">02 / CATEGORY</span>
+        <span class="category-title">ACCESSORIES</span>
+        <span class="category-subtitle">DETAILS MATTER</span>
+        <span class="category-arrow">↗</span>
+      </button>
+
+      <button class="category-tile category-other"
+        data-category="OTHER">
+        <span class="category-index">03 / CATEGORY</span>
+        <span class="category-title">OTHER</span>
+        <span class="category-subtitle">MORE TO DISCOVER</span>
+        <span class="category-arrow">↗</span>
+      </button>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section products-section" id="products">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">THE COLLECTION</p>
+          <h2>ALL PRODUCTS<span>.</span></h2>
+          <p class="section-description">
+            お気に入りのアイテムを見つけよう。
+          </p>
+        </div>
+
+        <span class="product-count" id="productCount">00 ITEMS</span>
+      </div>
+
+      <div class="product-toolbar">
+        <div class="category-filters" id="categoryFilters">
+          <button class="filter-button active" data-category="ALL">
+            ALL ITEMS
+          </button>
+          <button class="filter-button" data-category="APPAREL">
+            APPAREL
+          </button>
+          <button class="filter-button" data-category="ACCESSORIES">
+            ACCESSORIES
+          </button>
+          <button class="filter-button" data-category="OTHER">
+            OTHER
+          </button>
+        </div>
+
+        <label class="search-box">
+          <span>⌕</span>
+          <input type="search" id="productSearch"
+            placeholder="SEARCH PRODUCTS..." aria-label="商品検索">
+        </label>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <div class="loading-card">
+          <span class="loader"></span>
+          <p>LOADING COLLECTION...</p>
+        </div>
+      </div>
+
+      <div class="empty-state" id="emptyState" hidden>
+        <span>NO PRODUCTS FOUND</span>
+        <p>条件に合う商品が見つかりませんでした。</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section" id="about">
+      <div class="about-mark">N.</div>
+
+      <div class="about-content">
+        <p class="section-kicker">MORE THAN A TEAM</p>
+        <h2>ABOUT<br>NIDMEGENT<span>.</span></h2>
+
+        <p class="about-lead">
+          楽しく、ときには本気で向き合える。
+        </p>
+
+        <p class="about-description">
+          Nidmegent Esportsは、ゲームを通じて人と人がつながり、
+          何度でも挑戦できる場所を目指しています。<br>
+          このストアから、Nidmegentの世界観をあなたの日常へ。
+        </p>
+
+        <a href="#products" class="primary-button">
+          DISCOVER OUR ITEMS <span class="button-arrow">↘</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- EXTERNAL STORE NOTICE -->
+    <section class="purchase-notice">
+      <div class="notice-symbol">↗</div>
+      <div>
+        <h3>YOUR NEXT FAVORITE ITEM.</h3>
+        <p>
+          商品の購入は、各商品の販売ページ（BOOTH・SUZURI）で行えます。
+          当サイトでは決済を受け付けていません。
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <a href="#home" class="footer-brand">
+      <img src="images/logo.png" alt="" class="footer-logo">
+      <span>NIDMEGENT</span>
+    </a>
+
+    <p class="footer-tagline">
+      NEVER GIVE UP. NEVER BACK DOWN.
+    </p>
+
+    <div class="footer-bottom">
+      <span>© <span id="currentYear"></span> NIDMEGENT ESPORTS</span>
+      <a href="#home">BACK TO TOP ↑</a>
+    </div>
+  </footer>
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <dialog class="product-modal" id="productModal">
+    <button class="modal-close" id="modalClose"
+      aria-label="閉じる">×</button>
+
+    <div class="modal-layout">
+      <div class="modal-image-wrap">
+        <img src="" alt="" id="modalImage">
+      </div>
+
+      <div class="modal-content">
+        <p class="section-kicker" id="modalCategory">CATEGORY</p>
+        <h2 id="modalName">PRODUCT NAME</h2>
+        <p class="modal-price" id="modalPrice"></p>
+        <p class="modal-description" id="modalDescription"></p>
+
+        <a href="#" id="modalPurchase" class="primary-button"
+          target="_blank" rel="noopener noreferrer">
+          BUY AT STORE <span class="button-arrow">↗</span>
+        </a>
+
+        <p class="modal-note">
+          ※購入手続きは外部販売サイトで行われます。
+        </p>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status"></div>
+
+</body>
+</html>
